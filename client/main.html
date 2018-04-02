@@ -1,0 +1,78 @@
+
+
+<head>
+  <title>Bits</title>
+</head>
+
+<body>
+  <h1>Geoblockmaping!</h1>
+
+  {{> hello}}
+  {{> info}}
+</body>
+
+<template name="hello">
+  <form action="/action_page.php">
+    <fieldset>
+      <legend>Personal information:</legend>
+      First name:<br>
+      <input type="text" name="firstname" value="Mickey"><br>
+      Last name:<br>
+      <input type="text" name="lastname" value="Mouse"><br><br>
+      <input type="submit" value="Submit">
+    </fieldset>
+  </form>
+</template>
+
+<template name="info">
+  <h2>.</h2>
+  <form action="/action_page.php">
+    <fieldset>
+      <legend>Title information:</legend>
+      Title number:<br>
+      <input type="text" name="firstname" value="Mickey"><br>
+      Sereal number:<br>
+      <input type="text" name="lastname" value="Mouse"><br><br>
+      <input type="submit" value="Submit">
+    </fieldset>
+  </form>
+
+
+
+
+
+<button onclick="getLocation()">get coordinates</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
+
+
+
+
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+get Date and Time.</button>
+
+<p id="demo"></p>
+
+
+
+</template>
